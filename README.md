@@ -1,8 +1,9 @@
 # Telomere-to-telomere consortium
  
-In collaboration with the [Human Pangenome Reference Consortium](https://humanpangenome.org) and the [Genome in a Bottle Consortium](https://www.nist.gov/programs-projects/genome-bottle) we have sequenced and assembled the [HG002](https://www.coriell.org/0/Sections/Search/Sample_Detail.aspx?Ref=GM24385) aka GM24385 aka huAA53E0 cell line.
- 
-The previously generated HiFi data is available from the HPRC and ONT data is available from the HPRC and GIAB. The assembly used [verkko](https://github.com/marbl/verkko) with manual assignment of nodes to chromosomes, ONT-based patching to resolve HiFi coverage gaps, manual resolution of tangles, and Strand-Seq and Hi-C based assignment of acrocentric short arms to chromosomes. We have made the assembly available to the community immediately. However, it has not been validated and may contain errors, both SNP and SV, and should be treated as a draft.
+In collaboration with the [Human Pangenome Reference Consortium](https://humanpangenome.org) and the [Genome in a Bottle Consortium](https://www.nist.gov/programs-projects/genome-bottle) we have sequenced and assembled the [HG002](https://www.coriell.org/0/Sections/Search/Sample_Detail.aspx?Ref=GM24385) aka GM24385 aka huAA53E0 cell line. 
+The ultimate goal of this effort is to create a reference assembly for the HG002 reference material that is perfectly accurate.
+
+The previously generated HiFi data is available from the HPRC and ONT data is available from the HPRC and GIAB. The assembly used [verkko](https://github.com/marbl/verkko) with manual assignment of nodes to chromosomes, ONT-based patching to resolve HiFi coverage gaps, manual resolution of tangles, and Strand-Seq and Hi-C based assignment of acrocentric short arms to chromosomes. We have made the assembly available to the community immediately. Although the latest assembly release is gapless (with the excption of the rDNA arrays), it has not been validated and may contain errors, both SNP and SV, and should be treated as a draft. Work on validation and polishing is underway.
  
 ## Data reuse and license
 All assembly data is released to the public domain ([CC0](https://creativecommons.org/publicdomain/zero/1.0/)) and we encourage its reuse. We would appreciate if you would acknowledge and cite the "Telomere-to-Telomere" (T2T) Consortium for the creation of this data. More information about our consortium can be found on the [T2T homepage](https://sites.google.com/ucsc.edu/t2tworkinggroup/) and a list of related citations is available below:
