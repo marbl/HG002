@@ -1,4 +1,4 @@
-# Telomere-to-telomere consortium
+# Telomere-to-telomere consortium HG002 project
  
 In collaboration with the [Human Pangenome Reference Consortium](https://humanpangenome.org) and the [Genome in a Bottle Consortium](https://www.nist.gov/programs-projects/genome-bottle) we have sequenced and assembled the [HG002](https://www.coriell.org/0/Sections/Search/Sample_Detail.aspx?Ref=GM24385) aka GM24385 aka huAA53E0 cell line. 
 The ultimate goal of this effort is to create a reference assembly for the HG002 reference material that is perfectly accurate.
