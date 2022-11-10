@@ -10,7 +10,7 @@ All assembly data is released to the public domain ([CC0](https://creativecommon
  
 ### Relevant citations:
 1. Rautiainen M, et al. [Verkko: telomere-to-telomere assembly of diploid chromosomes](https://doi.org/10.1101/2022.06.24.497523). BioRxiv, 2022.
-2. Wang T. [The Human Pangenome Project: a global resource to map genomic diversity.](https://www.nature.com/articles/s41586-022-04601-8). Nature, 2022.
+2. Wang T. [The Human Pangenome Project: a global resource to map genomic diversity](https://www.nature.com/articles/s41586-022-04601-8). Nature, 2022.
 3. Zook J. et al. [A robust benchmark for detection of germline large deletions and insertions](https://doi.org/10.1038/s41587-020-0538-8). Nature Biotech, 2022.
  
 # Assembly releases
