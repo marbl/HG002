@@ -1,7 +1,7 @@
-# Telomere-to-telomere consortium HG002 project
+# T2T consortium HG002 "Q100" project
  
 In collaboration with the [Human Pangenome Reference Consortium](https://humanpangenome.org) and the [Genome in a Bottle Consortium](https://www.nist.gov/programs-projects/genome-bottle) we have sequenced and assembled the [HG002](https://www.coriell.org/0/Sections/Search/Sample_Detail.aspx?Ref=GM24385) aka GM24385 aka huAA53E0 cell line. 
-The ultimate goal of this effort is to create a reference assembly for the HG002 reference material that is perfectly accurate.
+The ultimate goal of this effort is to create a reference assembly for the HG002 reference material that is perfectly accurate. This is the meaning of the "Q100" project nickname, which refers to a Phred quality score of 1 error per 10 billion bases.
 
 The previously generated HiFi data is available from the HPRC and ONT data is available from the HPRC and GIAB. The assembly used [verkko](https://github.com/marbl/verkko) with manual assignment of nodes to chromosomes, ONT-based patching to resolve HiFi coverage gaps, manual resolution of tangles, and Strand-Seq and Hi-C based assignment of acrocentric short arms to chromosomes. We have made the assembly available to the community immediately. Although the latest assembly release is gapless (with the excption of the rDNA arrays), it has not been validated and may contain errors, both SNP and SV, and should be treated as a draft. Work on validation and polishing is underway.
  
