@@ -1,19 +1,18 @@
 # Telomere-to-telomere consortium HG002 "Q100" project
  
-In collaboration with the [Human Pangenome Reference Consortium](https://humanpangenome.org) and the [Genome in a Bottle Consortium](https://www.nist.gov/programs-projects/genome-bottle) we have sequenced, assembled and polished the [HG002](https://www.coriell.org/0/Sections/Search/Sample_Detail.aspx?Ref=GM24385) (also known as GM24385 and huAA53E0) cell line. 
-The ultimate goal of this effort is to create a reference assembly for the HG002 reference material which is perfectly accurate. This is the meaning of the "Q100" project nickname, which refers to a Phred quality score of 1 error per 10 billion bases.
+The [Telomere-to-Telomere Consortium](https://sites.google.com/ucsc.edu/t2tworkinggroup), in collaboration with the [Human Pangenome Reference Consortium](https://humanpangenome.org) and the [Genome in a Bottle Consortium](https://www.nist.gov/programs-projects/genome-bottle), have sequenced, assembled and polished the [HG002](https://www.coriell.org/0/Sections/Search/Sample_Detail.aspx?Ref=GM24385) (also known as GM24385 and huAA53E0) cell line. The ultimate goal of this effort is to create a "genome benchmark" for the HG002 reference material that covers all bases of the diploid genome and is perfectly accurate. Hence, the "Q100" project nickname, which refers to a Phred quality score of 1 error per 10 billion bases.
 
-The initial assembly used for this project was performed using HiFi data available from the HPRC, as well as ONT data available from the HPRC and GIAB. The [verkko](https://github.com/marbl/verkko) assembler was used, followed by manual assignment of nodes to chromosomes, ONT-based patching to resolve HiFi coverage gaps, manual resolution of tangles, and Strand-Seq and Hi-C based assignment of acrocentric short arms to chromosomes.
+The initial assembly used for this project was performed using HiFi data available from the HPRC, as well as ONT data available from the HPRC and GIAB. The [Verkko](https://github.com/marbl/verkko) assembler was used, followed by manual assignment of nodes to chromosomes, ONT-based patching to resolve HiFi coverage gaps, manual resolution of tangles, and Strand-Seq and Hi-C based scaffolding across the rDNA arrays. The v0.7 assembly release then underwent two rounds of extensive polishing, patching, and validation to produce the v1.0 release. Although the v1.0 assembly does contain gaps (scaffolded stretches of N's) for nine out of ten of the rDNA arrays, it is otherwise T2T ("telomere to telomere"), has nearly perfect haplotype phasing, and has an estimated consensus error rate of less than 1 per 10 million bases (Phred >Q70). Work on the annotation, characterization, and correction of any remaining errors in the v1.0 assembly will continue as sequencing technology improves and any additional errors are identified. This will include the eventual inclusion and finishing of the rDNA arrays. If you identify any errors in the latest assembly, please raise an issue with all relevant evidence and information on the [associated issues repository](https://github.com/marbl/HG002-issues).
 
-The first released assembly (release "v0.7") then underwent two rounds of extensive polishing, patching, and validation to produce our latest assembly release, v1.0. Although this latest assembly release does contain gaps (scaffolded stretches of N's) for nine out of ten of the rDNA arrays, it is otherwise T2T ("telomere to telomere"), and is estimated to have very high consensus quality (exceeding phred-scaled error rate Q70) and near perfect haplotype phasing. Work on the annotation and characterization of any remaining errors in the v1.0 assembly is underway.
- 
 ## Data reuse and license
 All assembly data is released to the public domain ([CC0](https://creativecommons.org/publicdomain/zero/1.0/)) and we encourage its reuse. We would appreciate if you would acknowledge and cite the "Telomere-to-Telomere" (T2T) Consortium for the creation of this data. More information about our consortium can be found on the [T2T homepage](https://sites.google.com/ucsc.edu/t2tworkinggroup/) and a list of related citations is available below:
- 
+
 ### Relevant citations:
-1. Rautiainen M, et al. [Verkko: telomere-to-telomere assembly of diploid chromosomes](https://doi.org/10.1101/2022.06.24.497523). BioRxiv, 2022.
-2. Wang T. [The Human Pangenome Project: a global resource to map genomic diversity](https://www.nature.com/articles/s41586-022-04601-8). Nature, 2022.
-3. Zook J. et al. [A robust benchmark for detection of germline large deletions and insertions](https://doi.org/10.1038/s41587-020-0538-8). Nature Biotech, 2022.
+1. Rhie A, et al. [The complete sequence of a human Y chromosome](https://pubmed.ncbi.nlm.nih.gov/37612512/). Nature, 2023.
+2. Rautiainen M, et al. [Telomere-to-telomere assembly of diploid chromosomes with Verkko](https://pubmed.ncbi.nlm.nih.gov/36797493/). Nature Biotechnology, 2023.
+3. Wang T. [The Human Pangenome Project: a global resource to map genomic diversity](https://pubmed.ncbi.nlm.nih.gov/35444317/). Nature, 2022.
+4. Nurk, et al. [The complete sequence of a human genome](https://pubmed.ncbi.nlm.nih.gov/35357919/). Science, 2022.
+5. Zook J. et al. [A robust benchmark for detection of germline large deletions and insertions](https://pubmed.ncbi.nlm.nih.gov/32541955/). Nature Biotechnology, 2022.
  
 # Assembly releases
 ### v1.0 (October, 2023)
