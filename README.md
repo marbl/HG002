@@ -31,7 +31,7 @@ All assembly data is released to the public domain ([CC0](https://creativecommon
 Consensus quality exceeds Q60. Centers of 9/10 rDNA arrays are represented by N-gaps.
  
 ## Downloads
-- <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/">Assembly FASTA files</a>
+- <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/HG002/assemblies/">Assembly FASTA files</a>
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/HG002/assemblies/polishing/HG002/v1.0/mapping/">Alignment files (BAM-formatted) of read data aligned to the V1.0 assembly</a>
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/scratch/HG002/assemblies/graphs/20220725/assembly.homopolymer-compressed.noseq.gfa">Assembly graph from Verkko v1.1 in GFA format, no sequences included (md5: a7473ba67b1109089217ee4b7fdf647a )
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/scratch/HG002/assemblies/graphs/20220812/assembly.homopolymer-compressed.noseq.gfa">Assembly graph from Verkko v1.2/MBG v1.0.13, no sequences included (md5: 86f896e5232a5aee95b47f32fbddd114)
