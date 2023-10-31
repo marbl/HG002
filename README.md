@@ -35,7 +35,7 @@ All assembly data is released to the public domain ([CC0](https://creativecommon
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/scratch/HG002/assemblies/drafts/v0.7/assembly.v0.7.chromosome_paths.gaf">Genomic paths through both graphs used for consensus. ChrX and chr12 maternal were previously finished and are excluded </a> (md5: bf07da577141d4240f54b18091f0b35d)
  
 ### Sequencing data
-The sequencing dataset used for the project has been moved to [this page](Sequencing_data.md).
+Locations of the sequencing dataset used for this project can be found [here](Sequencing_data.md).
 
 # Contact
  
