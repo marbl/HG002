@@ -9,6 +9,9 @@ Nanopore sequencing was performed by HPRC and GIAB. The fastq data used for the 
 ## Element Biosciences Data
 Element Biosciences whole genome data from PCR-free libraries was used in creating v0.9 and v1.0, and is available from the [Element Biosciences website](https://go.elementbiosciences.com/human-whole-genome-sequencing-cloudbreak).
 
+## PacBio Onso Sequence Data
+Onso sequencing data was obtained from Chris Mason at Weill Cornell Medicine and is available on [AWS](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/scratch/HG002/sequencing/onso/Mason-Onso-HG002/).
+
 ## StrandSeq
 Strandseq data is available from the [HPRC](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC_PLUS/HG002/raw_data/Strand_seq/)
  
