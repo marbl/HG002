@@ -2,6 +2,8 @@
 
 The [Telomere-to-Telomere Consortium](https://sites.google.com/ucsc.edu/t2tworkinggroup), along with the [Human Pangenome Reference Consortium](https://humanpangenome.org) and the [Genome in a Bottle Consortium](https://www.nist.gov/programs-projects/genome-bottle), have sequenced, assembled and polished the [HG002](https://www.coriell.org/0/Sections/Search/Sample_Detail.aspx?Ref=GM24385&Product=CC) (also known as GM24385 and huAA53E0) cell line. The ultimate goal of this effort is to create a "genome benchmark" for the HG002 reference material that covers all bases of the diploid genome and is perfectly accurate. Hence, the "Q100" project nickname, which refers to a Phred quality score of 1 error per 10 billion bases.
 
+Current benchmarks are typically defined as a list of variants called against a reference genome such as GRCh38. This is problematic in that the GRCh38 reference is incomplete, and there may be regions of the benchmark genome (e.g. HG002) that do not reliably align to the reference. A more natural and comprehensive benchmark representation is the complete sequence of the genome itself, i.e. a “genome benchmark” as opposed to a “variant benchmark”. Assembling the complete HG002 genome is our first step towards creating such a genome benchmark, and next steps will include the development of tools and metrics for evaluating de novo assemblies and variant calls against the benchmark.
+
 The initial assembly used for this project was performed using HiFi data available from the HPRC, as well as ONT data available from the HPRC and GIAB. The [Verkko](https://github.com/marbl/verkko) assembler was used, followed by manual assignment of nodes to chromosomes, ONT-based patching to resolve HiFi coverage gaps, manual resolution of tangles, and Strand-Seq and Hi-C based scaffolding across the rDNA arrays. The v0.7 assembly release then underwent two rounds of extensive polishing, patching, and validation to produce the v1.0 release. Although the v1.0 assembly does contain gaps (scaffolded stretches of N's) for nine out of ten of the rDNA arrays, it is otherwise T2T ("telomere to telomere"), has nearly perfect haplotype phasing, and has an estimated consensus error rate of less than 1 per 10 million bases (Phred >Q70). Work on the annotation, characterization, and correction of any remaining errors in the v1.0 assembly will continue as sequencing technology improves and any additional errors are identified. This will include the eventual inclusion and finishing of the rDNA arrays. If you identify any errors in the latest assembly, please raise an issue with all relevant evidence and information on the [associated issues repository](https://github.com/marbl/HG002-issues).
 
 ## Data reuse and license
@@ -43,5 +45,5 @@ Please raise issues on this Github repository concerning access to this dataset.
  
 # History
  
-    * v1.0: 31st October 2022. V1.0 release.
+    * v1.0: 31st October 2023. V1.0 release.
     * v0.7: 7th November 2022. Initial release.
