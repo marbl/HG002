@@ -55,5 +55,6 @@ Please raise issues on this Github repository concerning access to this dataset.
  
 # History
  
+    * v1.1: 22nd July 2024. V1.1 release.
     * v1.0: 31st October 2023. V1.0 release.
     * v0.7: 7th November 2022. Initial release.
