@@ -41,7 +41,8 @@ This genome is also viewable in the [UCSC browser](https://genome.ucsc.edu/cgi-b
  
 ## Downloads
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/HG002/assemblies/">Assembly FASTA files</a>
-- <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/HG002/assemblies/polishing/HG002/v1.0/mapping/">Alignment files of read data aligned to the V1.0 assembly (BAM format)</a>
+- <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/HG002/assemblies/polishing/HG002/v1.1/mapping/">Alignment files of read data aligned to the V1.1 assembly (BAM format)</a>
+- <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/HG002/assemblies/changes/">Chain files for lifting between different HG002 releases and references (e.g., CHM13v2.0, GRCh38, and hs37d5)</a>
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/scratch/HG002/assemblies/graphs/20220725/assembly.homopolymer-compressed.noseq.gfa">Assembly graph from Verkko v1.1 in GFA format, no sequences included (md5: a7473ba67b1109089217ee4b7fdf647a )
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/scratch/HG002/assemblies/graphs/20220812/assembly.homopolymer-compressed.noseq.gfa">Assembly graph from Verkko v1.2/MBG v1.0.13, no sequences included (md5: 86f896e5232a5aee95b47f32fbddd114)
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/scratch/HG002/assemblies/drafts/v0.7/assembly.v0.7.chromosome_paths.gaf">Genomic paths through both graphs used for consensus. ChrX and chr12 maternal were previously finished and are excluded </a> (md5: bf07da577141d4240f54b18091f0b35d)
