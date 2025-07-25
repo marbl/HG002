@@ -40,7 +40,8 @@ This genome is also viewable in the [UCSC browser](https://genome.ucsc.edu/cgi-b
 [hg002v0.7.fasta.gz](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/scratch/HG002/assemblies/drafts/assembly.v0.7.fasta.gz) : T2T reconstruction of all 46 chromosomes of HG002 along with mitochondria and EBV sequences. Maternal and paternal haplotypes are denoted by contig name. Unassigned contigs are from unresolved rDNA arrays. The pipeline used two versions of verkko combined with manual curation and resolution. Assemblies using both versions are available below along with the final traversals used for each chromosome and haplotype. Negative gaps indicate there was an overlap between the verkko contigs, supported by ONT-only assembly and sequences. Note that additional files, including ONT coverage and trio coloring, are available for each assembly. You can browse these from the top-level assembly [folder](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/scratch/HG002/assemblies/graphs/). Consensus quality exceeds Q60. Centers of 9/10 rDNA arrays are represented by N-gaps.
  
 # Software tools
-- [GQC](https://github.com/nhansen/GQC)
+- [GQC](https://github.com/nhansen/GQC) software for benchmarking genome assemblies and read datasets using the HG002v1.1 assembly
+- [hg002-q100-annotation](https://github.com/haydenji0731/hg002-q100-annotation) repository of software used to do the LiftOff-based gene annotation of the HG002v1.1 assembly
 
 # Downloads
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/HG002/assemblies/">Assembly FASTA files</a>
