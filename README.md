@@ -41,7 +41,7 @@ This genome is also viewable in the [UCSC browser](https://genome.ucsc.edu/cgi-b
  
 # Software tools
 - [GQC](https://github.com/nhansen/GQC) software for benchmarking genome assemblies and read datasets using the HG002v1.1 assembly
-- [hg002-q100-annotation](https://github.com/haydenji0731/hg002-q100-annotation) repository of software used to do the LiftOff-based gene annotation of the HG002v1.1 assembly
+- [hg002-q100-annotation](https://github.com/haydenji0731/hg002-q100-annotation) software used to do the LiftOff-based gene annotation of the HG002v1.1 assembly
 
 # Downloads
 - <a href="https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/HG002/assemblies/">Assembly FASTA files</a>
