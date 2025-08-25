@@ -23,6 +23,9 @@ Hi-C data is available from the [HPRC](https://s3-us-west-2.amazonaws.com/human-
 ## Illumina PCRFree Data
 For polishing, we made use of 2x250 whole genome sequence from Illumina available from [NCBI](https://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/).
 
+## Other listed resources
+A comprehensive catalog of available sequencing data for HG002 is available on the FTP site at [NCBI](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/).
+
 # Notes on downloading files.
  
 Files are generously hosted by Amazon Web Services. Although available as straight-forward HTTP links, download performance is improved by using the Amazon Web Services <a href="https://aws.amazon.com/cli/">command-line interface</a>. References should be amended to use the `s3://` addressing scheme, i.e. replace `https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/` with `s3://human-pangenomics/T2T` to download.
