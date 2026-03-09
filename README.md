@@ -56,6 +56,9 @@ N.B.: The original release of v1.0 fasta files contained ambiguity codes at thre
 ## Sequencing data
 Locations of the sequencing dataset used for this project can be found [here](Sequencing_data.md).
 
+## Browser tracks/Annotation
+Locations of UCSC assembly hub tracks with annotation are listed [here](Browser_track_data.md).
+
 # Contact
  
 Please raise issues on this Github repository concerning access to this dataset. For any errors identified in the assembly itself, please raise issues on the associated [HG002-issues repository](https://github.com/marbl/HG002-issues).
