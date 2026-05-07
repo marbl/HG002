@@ -64,9 +64,9 @@ This used hifiasm v0.25.0r910 or later. We only correct reads over 20 kbp below 
         echo "Warning: unrecognized format for hifiInput $f" >&2
      fi
    done
-   ) | seqtk seq -L 20000 - | bgzip -@ 8 -l 9 -i -c -I r10-hifiasm-correct.input.fastq.gz.gzi - > r10-hifiasm-correct.input.fastq.gz 
+   ) | seqtk seq -L 20000 - | bgzip -@ 8 -l 9 -i -c -I r10-hifiasm-correct.input.fastq.gz.gzi - > r10-hifiasm-correct.input.fastq.gz
    hifiasm -e --write-ec --ont r10-hifiasm-correct.input.fastq.gz \
-        --hf hifi.input.fastq.gz --hom-cov 185 && \
+        --hf hifi.input.fastq.gz --hom-cov 185  \
         -o r10-hifiasm-correct.WORKING -t 32 && \
    bgzip -@ 8 -l 9 -i r10-hifiasm-correct.WORKING.ec.fq && \
    samtools faidx r10-hifiasm-correct.WORKING.ec.fq.gz && \
