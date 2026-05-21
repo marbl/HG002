@@ -80,7 +80,7 @@ This used hifiasm v0.25.0r910 or later. We only correct reads over 20 kbp below 
    mv r10-hifiasm-correct.WORKING.ec.fq.gz.fai r10-hifiasm-correct.ec.fq.gz.fai && \
 ````
 
-The `--hom-cov` parameter is set based on the estimated coverage of ONT and HiFi data (sum of bases divided by 3.1 Gbp). The script include pre-processing various inputs into a format compatible with hifiasm. This requires <800 GB and 3k CPU h on our cluster. Only the `r10-hifiasm-correct.ont.fq.gz` is used after correction so you can remove other corrected outputs to save space. You can download the computed [corrected reads](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/r10-hifiasm-correct.ec.ont.fq.gz).
+The `--hom-cov` parameter is set based on the estimated coverage of ONT and HiFi data (sum of bases divided by 3.1 Gbp). The script include pre-processing various inputs into a format compatible with hifiasm. This requires <800 GB RAM and 3k CPU h on our cluster. Only the `r10-hifiasm-correct.ont.fq.gz` is used after correction so you can remove other corrected outputs to save space. You can download the computed [corrected reads](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/r10-hifiasm-correct.ec.ont.fq.gz).
 
 ### Assembly with verkko
 This requires verkko v2.3 or later. The corrected ONT UL data is input as high-quality sequences to verkko while the raw ONT UL is input as resolving ONT data. The supplied command will run verkko on a slurm cluster, assuming one is available and auto-request memory/time for each job. Omit the `--slurm` option if you would like to run verkko on a single node instead, it will auto-detect available CPUs/memory.
@@ -96,7 +96,7 @@ This requires verkko v2.3 or later. The corrected ONT UL data is input as high-q
     --unitig-abundance 8  
 ````
 
-The parameter `--unitig-abundance 8` is recommended for high-coverage datasets (the total coverage of ONT UL and HiFi here is 180x). This requires <300 GB and 13K CPU h or 41 hrs walltime on our cluster. 
+The parameter `--unitig-abundance 8` is recommended for high-coverage datasets (the total coverage of ONT UL and HiFi here is 180x). This requires <300 GB RAM and 13K CPU h or 41 hrs walltime on our cluster. 
 </details>
 
 Download the [complete assembly](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.fasta.gz) or [haplotype1](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.haplotype1.fasta.gz) and [haplotype2](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.haplotype2.fasta.gz) separately.
