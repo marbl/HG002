@@ -4,15 +4,16 @@
 The data is based on the HPRC recipe combining approximately 60x HiFi, 60x ONT UL >100 kbp, and 50x Hi-C.
 
 <details>
-<summary><h2>Download</h2></summary>
+<summary><h2>Data Details</h2></summary>
+Note that the dataset includes both R9 and R10 datasets. The R9 data is optional but was included in the provided Verkko assembly.
 
 ### HiFi Revio Data
-Available from the [HPRC](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/polishing/HG002/v1.0/mapping/hifi_revio_pbmay24/hg002v1.0.1_hifi_revio_pbmay24.bam)
+Download the [HiFi data](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/polishing/HG002/v1.0/mapping/hifi_revio_pbmay24/hg002v1.0.1_hifi_revio_pbmay24.bam)
 
 ### Oxford Nanopore Data
-There is both R9 and R10 data available from HPRC. Download from the [R9 folder](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=NHGRI_UCSC_panel/HG002/nanopore/ultra-long/03_08_22_R941_HG002_rebasecalling-guppy-6.3.7/) includes multiple runs.  The assembly only used files `03*_[4-6]*.fq.gz`. 
-Download the [R10 file](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/polishing/HG002/v1.0/mapping/ont_r10_ul_dorado/hg002v1.0_ont_r10_ul_dorado.bam).
- 
+Download the [R10 data](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/HG002/assemblies/polishing/HG002/v1.0/mapping/ont_r10_ul_dorado/hg002v1.0_ont_r10_ul_dorado.bam).
+Download the optional [R9 runs](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=NHGRI_UCSC_panel/HG002/nanopore/ultra-long/03_08_22_R941_HG002_rebasecalling-guppy-6.3.7). The assembly only used files `03*_[4-6]*.fq.gz`.
+
 ### HiC
 Hi-C data is available from the [HPRC](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC_PLUS/HG002/raw_data/hic/downsampled/). The assembly used `HG002.HiC_1_S*fastq.gz` files.
  </details>
@@ -21,7 +22,7 @@ Hi-C data is available from the [HPRC](https://s3-us-west-2.amazonaws.com/human-
 The assembly consists of two steps, first the ONT UL data is corrected using [Hifiasm](https://github.com/chhylp123/hifiasm) using both ONT R10 UL data and HiFi data. The corrected ONT UL data, raw HiFi data, raw ONT UL, and Hi-C data are the co-assembled with [Verkko](https://github.com/marbl/verkko). This pipeline also requires python 3.8+, winnowmap, mashmap 3+, samtools, bwa, and seqtk.
 
 <details>
-<summary><h3>Commands</h3></summary>
+<summary><h3>Detailed Assembly Commands</h3></summary>
 
 Define
 ````
@@ -33,7 +34,7 @@ HIC2="HG002.HiC_1_S1_R2_001.fastq.gz HG002.HiC_1_S2_R2_001.fastq.gz HG002.HiC_1_
 ````
 
 ### Correction with Hifiasm
-This used hifiasm v0.25.0r910 or later. We only correct reads over 20 kbp below to save compute time/memory due to the deep coverage of this dataset. Typically we recommend 10kb as a filtering threshold.
+This used hifiasm v0.25.0r910 or later. We only correct reads over 20 kbp below to save compute time/memory due to the deep coverage of this dataset. Typically we recommend 10kb as a filtering threshold. Adjust the -t option to the number of cores available on your system.
 ````
    (
    for f in $HIFI; do
@@ -67,7 +68,7 @@ This used hifiasm v0.25.0r910 or later. We only correct reads over 20 kbp below 
    ) | seqtk seq -L 20000 - | bgzip -@ 8 -l 9 -i -c -I r10-hifiasm-correct.input.fastq.gz.gzi - > r10-hifiasm-correct.input.fastq.gz
    hifiasm -e --write-ec --ont r10-hifiasm-correct.input.fastq.gz \
         --hf hifi.input.fastq.gz --hom-cov 185  \
-        -o r10-hifiasm-correct.WORKING -t 32 && \
+        -o r10-hifiasm-correct.WORKING -t 64 && \
    bgzip -@ 8 -l 9 -i r10-hifiasm-correct.WORKING.ec.fq && \
    samtools faidx r10-hifiasm-correct.WORKING.ec.fq.gz && \
    cat r10-hifiasm-correct.WORKING.ec.fq.gz.fai | grep     "^m" | awk '{print $1}' > r10-hifiasm-correct.hifi.ids && \
@@ -79,10 +80,10 @@ This used hifiasm v0.25.0r910 or later. We only correct reads over 20 kbp below 
    mv r10-hifiasm-correct.WORKING.ec.fq.gz.fai r10-hifiasm-correct.ec.fq.gz.fai && \
 ````
 
-The `--hom-cov` parameter is set based on the estimated coverage of ONT and HiFi data (sum of bases divided by 3.1 Gbp). The script include pre-processing various inputs into a format compatible with hifiasm. This takes < 800 GB and 3000 CPU h on our cluster. Only the `r10-hifiasm-correct.ont.fq.gz` is used after correction so you can remove other corrected outputs to save space. You can download the computed [corrected reads](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/r10-hifiasm-correct.ec.ont.fq.gz).
+The `--hom-cov` parameter is set based on the estimated coverage of ONT and HiFi data (sum of bases divided by 3.1 Gbp). The script include pre-processing various inputs into a format compatible with hifiasm. This requires <800 GB and 3k CPU h on our cluster. Only the `r10-hifiasm-correct.ont.fq.gz` is used after correction so you can remove other corrected outputs to save space. You can download the computed [corrected reads](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/r10-hifiasm-correct.ec.ont.fq.gz).
 
 ### Assembly with verkko
-This requires verkko v2.3 or later. The corrected ONT UL data is input as high-quality sequences to verkko while the raw ONT UL is input as resolving ONT data:
+This requires verkko v2.3 or later. The corrected ONT UL data is input as high-quality sequences to verkko while the raw ONT UL is input as resolving ONT data. The supplied command will run verkko on a slurm cluster, assuming one is available and auto-request memory/time for each job. Omit the `--slurm` option if you would like to run verkko on a single node instead, it will auto-detect available CPUs/memory.
 
 ````
   verkko --slurm -d verkko-hi-c \
@@ -95,20 +96,21 @@ This requires verkko v2.3 or later. The corrected ONT UL data is input as high-q
     --unitig-abundance 8  
 ````
 
-The parameter `--unitig-abundance 8` is recommended for high-coverage datasets (the total coverage of ONT UL and HiFi here is 180x). This requires approximately <300 GB and 13K CPU h or 41 hrs walltime on our cluster. You can download the [complete assembly](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.fasta.gz) or [haplotype1](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.haplotype1.fasta.gz) and [haplotype2](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.haplotype2.fasta.gz) separately.
+The parameter `--unitig-abundance 8` is recommended for high-coverage datasets (the total coverage of ONT UL and HiFi here is 180x). This requires <300 GB and 13K CPU h or 41 hrs walltime on our cluster. 
 </details>
 
+Download the [complete assembly](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.fasta.gz) or [haplotype1](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.haplotype1.fasta.gz) and [haplotype2](https://s3-us-west-2.amazonaws.com/human-pangenomics/submissions/09cd8aa1-726c-4cb3-aeea-36e71bab75ff--HG002_hybrid_benchmark/assembly.haplotype2.fasta.gz) separately.
 
 ## Polishing
 
-The assembly QV (using yak on Illumina data) is estimated at 56 (Q48 via GQC). Polishing is currently not recommended/necessary.
+The assembly QV (using yak with k=31 mers from Illumina data) is estimated at 56 (Q48 via GQC). Polishing is currently not recommended/necessary.
 
 ## Validation
 
 GQC run assumes you've downloaded GQC and the v1.1 benchmark dataset from [here](https://github.com/marbl/GQC). 
 
 <details>
-<summary><h3>Commands</h3></summary>
+<summary><h3>Detailed QC Commands</h3></summary>
 
 ````
 CONFIGFILE=<path to GQC>/GQC/benchconfig.txt
