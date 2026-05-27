@@ -34,7 +34,7 @@ HIC2="HG002.HiC_1_S1_R2_001.fastq.gz HG002.HiC_1_S2_R2_001.fastq.gz HG002.HiC_1_
 ````
 
 ### Correction with Hifiasm
-This used hifiasm v0.25.0r910 or later. We only correct reads over 20 kbp below to save compute time/memory due to the deep coverage of this dataset. Typically we recommend 10kb as a filtering threshold. Adjust the -t option to the number of cores available on your system.
+This used hifiasm v0.25.0r910 or later. This is currently available under the [hybrid_v1 branch](https://github.com/chhylp123/hifiasm/tree/f5078f7b23fa3ba546189255d0242756c25619ca). We only correct reads over 20 kbp below to save compute time/memory due to the deep coverage of this dataset. Typically we recommend 10kb as a filtering threshold. Adjust the -t option to the number of cores available on your system.
 ````
    (
    for f in $HIFI; do
