@@ -23,6 +23,9 @@ Hi-C data is available from the [HPRC](https://s3-us-west-2.amazonaws.com/human-
 ## Illumina PCRFree Data
 For polishing, we made use of 2x250 whole genome sequence from Illumina available from [NCBI](https://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/).
 
+## Fiber-Seq
+HiFi reads from two chromatin-stenciled sperm samples (as described in Tullius et al., "Protamine lacunae preserve the paternal chromatin landscape in sperm", bioRxiv 2025. doi: 10.1101/2025.10.03.680364. PMID: 41256633; PMCID: PMC12621882), is available on [AWS](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/scratch/HG002/sequencing/fiberseq/sperm/).
+
 ## Other listed resources
 A comprehensive catalog of available sequencing data for HG002 is available on the FTP site at [NCBI](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/).
 
