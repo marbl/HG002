@@ -10,7 +10,7 @@ The initial assembly used for this project was performed using HiFi data availab
 All assembly data is released to the public domain ([CC0](https://creativecommons.org/publicdomain/zero/1.0/)) and we encourage its reuse. We would appreciate if you would acknowledge and cite the "Telomere-to-Telomere" (T2T) Consortium for the creation of this data. More information about our consortium can be found on the [T2T homepage](https://sites.google.com/ucsc.edu/t2tworkinggroup/) and a list of related citations is available below:
 
 ### Relevant citations:
-- Hansen NF, et al. [A complete diploid human genome benchmark for personalized genomics](https://www.biorxiv.org/content/10.1101/2025.09.21.677443v1). bioRxiv, 2025.
+- Hansen NF, et al. [A complete diploid human genome benchmark for personalized genomics](https://doi.org/10.1016/j.cell.2026.06.016). Cell, 2026
 - Rhie A, et al. [The complete sequence of a human Y chromosome](https://pubmed.ncbi.nlm.nih.gov/37612512/). Nature, 2023.
 - Rautiainen M, et al. [Telomere-to-telomere assembly of diploid chromosomes with Verkko](https://pubmed.ncbi.nlm.nih.gov/36797493/). Nature Biotechnology, 2023.
 - Wang T. [The Human Pangenome Project: a global resource to map genomic diversity](https://pubmed.ncbi.nlm.nih.gov/35444317/). Nature, 2022.
